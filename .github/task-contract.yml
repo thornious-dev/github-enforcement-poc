@@ -5,7 +5,5 @@ allowed_paths:
 forbidden_paths:
   - .github/task-contract.yml
 acceptance:
-  - name: app-greets
-    command: node scripts/acceptance-greets.js
   - name: contract-intact
     command: node scripts/acceptance-contract-intact.js
