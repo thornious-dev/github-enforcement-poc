@@ -25,6 +25,6 @@
 ## Contract weakening
 
 - edit `.github/task-contract.yml` to remove an acceptance command
-- result: `risk` reports high risk and `CODEOWNERS` requires human review before it can merge
+- result: `risk` reports high risk; in this one-account POC, merge requires an explicit repository-owner instruction
 
-Task contracts may change only through this high-risk review path. That lets the team start the next task without granting an agent permission to lower its own finish line.
+Task contracts may change only through this high-risk owner-decision path. A multi-account repository can enforce the same boundary with required Code Owner review.

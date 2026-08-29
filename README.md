@@ -43,6 +43,6 @@ Apply these repo settings in GitHub so the checks actually enforce merge safety:
 - `regression` runs the repository test suite
 - `risk` classifies only ordinary application, test, and documentation paths as low risk; protected and unknown paths are high risk
 
-`CODEOWNERS` protects the contract, workflows, scripts, and package commands. Combined with required Code Owner review and stale-approval dismissal, an agent cannot lower its own bar in the same PR.
+With more than one GitHub identity, `CODEOWNERS` can protect the contract, workflows, scripts, and package commands through required Code Owner review. A one-account repository cannot enforce an independent human review of its own changes; its protection comes from required deterministic checks and an explicit owner decision outside GitHub for high-risk merges.
 
-Task-contract changes are deliberately in scope so the next task can be defined through a PR. They are always high risk and require Code Owner review; normal code changes cannot use that route to self-approve.
+Task-contract changes are deliberately in scope so the next task can be defined through a PR. They are always high risk. In this one-account POC, merge them only after the repository owner explicitly directs it.
