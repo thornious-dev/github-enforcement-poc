@@ -1,1 +1,2 @@
 touches a forbidden area
+This intentional pull request proves that scope drift is rejected.
