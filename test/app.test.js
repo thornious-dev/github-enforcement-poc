@@ -9,3 +9,7 @@ test("greets a named person", () => {
 test("greets the world when blank", () => {
   assert.equal(greet(""), "Hello, world!");
 });
+
+test("greets zero as a supplied name", () => {
+  assert.equal(greet(0), "Hello, 0!");
+});
