@@ -18,3 +18,23 @@ The repo keeps the moving parts boring on purpose:
 - GitHub Actions workflows that wire the checks together
 
 If a change is out of scope, weakens acceptance criteria, or leaves behavior unfinished, the gates should fail before merge.
+
+## One-time GitHub setup
+
+Apply these repo settings in GitHub so the checks actually enforce merge safety:
+
+- Protect `main`
+- Require pull requests before merge
+- Require the `scope`, `acceptance`, `regression`, and `risk` checks
+- Block force pushes
+- Decide whether merge commits, squash, or rebase are allowed
+- Enable auto-merge only if you want low-risk changes to merge after checks pass
+
+## How the gates work
+
+- `scope` rejects out-of-scope diffs
+- `acceptance` runs every acceptance command from the task contract
+- `regression` runs the repository test suite
+- `risk` flags contract and workflow changes as high risk
+
+If someone weakens the task contract itself, the `risk` gate should route that change to human review instead of letting an agent lower the bar.
