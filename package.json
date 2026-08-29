@@ -1,0 +1,13 @@
+{
+  "name": "github-enforcement-poc",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check:task-contract": "node scripts/check-task-contract.js",
+    "classify:risk": "node scripts/classify-risk.js",
+    "accept": "node scripts/run-acceptance.js",
+    "regression": "node --test test/app.test.js",
+    "verify": "npm run check:task-contract && npm run classify:risk && npm run accept && npm run regression"
+  }
+}
