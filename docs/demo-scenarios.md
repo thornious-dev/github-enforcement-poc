@@ -25,4 +25,6 @@
 ## Contract weakening
 
 - edit `.github/task-contract.yml` to remove an acceptance command
-- result: `scope` fails because the contract is forbidden for this task; `risk` reports high risk; `CODEOWNERS` requires human review before it can merge
+- result: `risk` reports high risk and `CODEOWNERS` requires human review before it can merge
+
+Task contracts may change only through this high-risk review path. That lets the team start the next task without granting an agent permission to lower its own finish line.

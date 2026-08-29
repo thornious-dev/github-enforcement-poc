@@ -7,7 +7,7 @@ function run(command, args = []) {
 }
 
 test("scope gate catches out-of-scope drift", () => {
-  const result = run("scripts/check-scope.js", [".github/task-contract.yml"]);
+  const result = run("scripts/check-scope.js", ["fixtures/drift/out-of-scope.txt"]);
   assert.notEqual(result.status, 0);
   assert.match(result.stderr || result.stdout, /Out of scope/);
 });

@@ -44,3 +44,5 @@ Apply these repo settings in GitHub so the checks actually enforce merge safety:
 - `risk` classifies only ordinary application, test, and documentation paths as low risk; protected and unknown paths are high risk
 
 `CODEOWNERS` protects the contract, workflows, scripts, and package commands. Combined with required Code Owner review and stale-approval dismissal, an agent cannot lower its own bar in the same PR.
+
+Task-contract changes are deliberately in scope so the next task can be defined through a PR. They are always high risk and require Code Owner review; normal code changes cannot use that route to self-approve.

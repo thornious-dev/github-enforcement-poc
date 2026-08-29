@@ -2,8 +2,11 @@ task_id: sample-task-001
 allowed_paths:
   - src/**
   - test/**
-forbidden_paths:
+  - docs/**
+  - README.md
   - .github/task-contract.yml
+forbidden_paths:
+  - migrations/**
 acceptance:
   - name: app-greets
     command: node scripts/acceptance-greets.js
