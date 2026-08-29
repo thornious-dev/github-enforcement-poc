@@ -1,0 +1,6 @@
+# Enforcement policy can only be changed with an explicit owner review.
+/.github/CODEOWNERS @thornious-dev
+/.github/task-contract.yml @thornious-dev
+/.github/workflows/ @thornious-dev
+/scripts/ @thornious-dev
+/package.json @thornious-dev

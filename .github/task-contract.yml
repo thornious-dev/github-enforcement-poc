@@ -2,9 +2,6 @@ task_id: sample-task-001
 allowed_paths:
   - src/**
   - test/**
-  - scripts/**
-  - fixtures/**
-  - .github/workflows/**
 forbidden_paths:
   - .github/task-contract.yml
 acceptance:

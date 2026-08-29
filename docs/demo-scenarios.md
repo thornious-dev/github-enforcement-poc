@@ -5,7 +5,7 @@
 - change `src/app.js`
 - add or update a matching test in `test/app.test.js`
 - keep `.github/task-contract.yml` unchanged
-- result: `scope`, `acceptance`, `regression`, and `risk` all pass
+- result: `scope`, `acceptance`, `regression`, and `risk` all pass; the change is low risk and can be auto-merge eligible after normal review policy is satisfied
 
 ## Drift
 
@@ -25,4 +25,4 @@
 ## Contract weakening
 
 - edit `.github/task-contract.yml` to remove an acceptance command
-- result: `risk` fails and the change is routed to human review
+- result: `scope` fails because the contract is forbidden for this task; `risk` reports high risk; `CODEOWNERS` requires human review before it can merge

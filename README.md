@@ -14,7 +14,7 @@ The repo keeps the moving parts boring on purpose:
 - deterministic scope checks
 - deterministic acceptance checks
 - a regression gate
-- a simple risk classifier
+- a conservative risk classifier
 - GitHub Actions workflows that wire the checks together
 
 Useful references:
@@ -41,6 +41,6 @@ Apply these repo settings in GitHub so the checks actually enforce merge safety:
 - `scope` rejects out-of-scope diffs
 - `acceptance` runs every acceptance command from the task contract
 - `regression` runs the repository test suite
-- `risk` flags contract and workflow changes as high risk
+- `risk` classifies only ordinary application, test, and documentation paths as low risk; protected and unknown paths are high risk
 
-If someone weakens the task contract itself, the `risk` gate should route that change to human review instead of letting an agent lower the bar.
+`CODEOWNERS` protects the contract, workflows, scripts, and package commands. Combined with required Code Owner review and stale-approval dismissal, an agent cannot lower its own bar in the same PR.

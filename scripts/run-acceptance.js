@@ -2,6 +2,12 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 
+const contractCheck = spawnSync("node", ["scripts/check-task-contract.js"], { stdio: "inherit" });
+if (contractCheck.status !== 0) {
+  console.error("Task contract is invalid: NOT-RUN");
+  process.exit(1);
+}
+
 const contract = fs.readFileSync(path.resolve(".github/task-contract.yml"), "utf8");
 const commands = contract
   .split("\n")

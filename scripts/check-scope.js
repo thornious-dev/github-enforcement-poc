@@ -9,12 +9,21 @@ const sections = (label) => {
 };
 const allowed = sections("allowed_paths");
 const forbidden = sections("forbidden_paths");
+const args = process.argv.slice(2);
+const baseIndex = args.indexOf("--base");
+const headIndex = args.indexOf("--head");
 const changed =
-  process.argv.slice(2).length > 0
-    ? process.argv.slice(2)
-    : execSync("git diff --name-only HEAD^..HEAD", { encoding: "utf8" })
+  baseIndex >= 0 && headIndex >= 0
+    ? execSync(`git diff --name-only ${args[baseIndex + 1]} ${args[headIndex + 1]}`, {
+        encoding: "utf8",
+      })
         .split("\n")
-        .filter(Boolean);
+        .filter(Boolean)
+    : args.length > 0
+      ? args
+      : execSync("git diff --name-only HEAD^..HEAD", { encoding: "utf8" })
+          .split("\n")
+          .filter(Boolean);
 
 const matches = (pattern, file) => {
   if (pattern.endsWith("/**")) return file.startsWith(pattern.slice(0, -3));
