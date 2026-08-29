@@ -17,6 +17,12 @@ The repo keeps the moving parts boring on purpose:
 - a simple risk classifier
 - GitHub Actions workflows that wire the checks together
 
+Useful references:
+
+- [GitHub setup recipe](docs/branch-protection.md)
+- [Demo scenarios](docs/demo-scenarios.md)
+- [Pull request template](.github/pull_request_template.md)
+
 If a change is out of scope, weakens acceptance criteria, or leaves behavior unfinished, the gates should fail before merge.
 
 ## One-time GitHub setup

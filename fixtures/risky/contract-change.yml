@@ -1,0 +1,6 @@
+task_id: weakened-task
+allowed_paths:
+  - src/**
+forbidden_paths:
+  - .github/task-contract.yml
+acceptance: []

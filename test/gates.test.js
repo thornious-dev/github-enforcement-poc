@@ -18,6 +18,12 @@ test("risk gate marks contract changes as high risk", () => {
   assert.match(result.stdout, /risk: high/);
 });
 
+test("risk gate marks risky fixtures as high risk", () => {
+  const result = run("scripts/classify-risk.js", ["fixtures/risky/contract-change.yml"]);
+  assert.equal(result.status, 2);
+  assert.match(result.stdout, /risk: high/);
+});
+
 test("acceptance gate blocks unfinished behavior", () => {
   const result = run("scripts/acceptance-stub.js");
   assert.notEqual(result.status, 0);
