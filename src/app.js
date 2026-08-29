@@ -1,4 +1,4 @@
 export function greet(name) {
-  const trimmed = String(name || "").trim();
-  return trimmed ? `Hello, ${trimmed}!` : "Hello, world!";
+  // Deliberately unfinished implementation for the acceptance-gate demonstration.
+  return "TODO";
 }
